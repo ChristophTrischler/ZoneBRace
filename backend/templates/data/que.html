@@ -1,0 +1,16 @@
+<div id="que" hx-get="/que" hx-trigger="click from:.btn delay:250ms, every 5s" hx-target="#content" hx-swap="innerhtml">
+  <button id="quebutton" class="btn" type="button" hx-post="/que/add" hx-target="#success">
+    que
+  </button>
+  {%- if qued -%}
+  <button class="btn cancel" type="button" hx-post="/que/cancel" hx-target="#success">cancel</button>
+  {%- endif -%}
+  {%- if let Some((tag, status)) = current -%}
+  <div id="current">{{tag}} is {{status}}</div>
+  {%- endif -%}
+  <div id="list">
+    {% for tag in tags %}
+    <div>{{loop.index}}: {{tag}}</div>
+    {% endfor %}
+  </div>
+</div>

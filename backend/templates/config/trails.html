@@ -1,0 +1,12 @@
+<div id="trails">
+  <form hx-post="/trails/new" hx-target="#success">
+    <input type="text" name="name" placeholder="name of new trail" />
+    <input type="number" name="len" placeholder="length of the trail" />
+    <input type="submit" name="" value="create new trail" />
+  </form>
+  <ul>
+    {% for row in rows %}
+    <li>{{row.id}} {{row.name}} {{row.len}}</li>
+    {% endfor %}
+  </ul>
+</div>

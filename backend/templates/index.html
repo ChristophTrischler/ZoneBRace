@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="/static/style.css" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+  <script src="/static/jwt.js"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.8"></script>
+</head>
+
+<body hx-headers="js:{jwt: get_jwt()}">
+  <div id="header">
+    <a id="logo" hx-get="/links" hx-target="#content" hx-swap="innerHtml" hx-push-url="/">
+      <h3>Zone B Race</h3>
+    </a>
+    <div id="corner" hx-get="/user" hx-trigger="load delay:150ms" hx-swap="innerHtml"></div>
+  </div>
+  <div id="content" hx-target="#content" hx-swap="innerHtml" hx-trigger="load delay:150ms" hx-get="/{{ page }}"></div>
+  <div id="success"></div>
+</body>
+
+</html>

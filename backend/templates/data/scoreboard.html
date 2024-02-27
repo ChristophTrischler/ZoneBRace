@@ -1,0 +1,19 @@
+<div id="scoreboard">
+  <form hx-get="/scoreboard/table" hx-target="#table" hx-trigger="load, every 10s, change" hx-swap="innerhtml">
+    <label for="rider">rider filter: </label>
+    <select name="rider">
+      <option value=""></option>
+      {% for tag in rider %}
+      <option value="{{tag}}">{{tag}}</option>
+      {% endfor %}
+    </select>
+    <label for="trail">trail filter: </label>
+    <select name="trail">
+      <option value=""></option>
+      {% for name in trails %}
+      <option value="{{name}}">{{name}}</option>
+      {% endfor %}
+    </select>
+  </form>
+  <div id="table"></div>
+</div>

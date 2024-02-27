@@ -1,0 +1,139 @@
+:root {
+  --main-background-color: #1c1c1c;
+  --header-footer-background-color: #333333;
+  --accent-color: #ff6600;
+  --text-color: #ffffff;
+  --button-color: #4caf50;
+  --link-color: #ff6600;
+  --hover-active-color: #ff944d;
+  --secondary-text-color: #999999;
+}
+
+body {
+  background-color: var(--main-background-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+  font-style: Sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.cancel {
+  background-color: red;
+  color: black;
+}
+
+.secondary-text {
+  color: var(--secondary-text-color);
+}
+
+#header {
+  background-color: var(--header-footer-background-color);
+  position: fixed;
+  width: 100%;
+  height: 3.5rem;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#user h3 {
+  padding: 0;
+  margin: 0;
+}
+
+#user {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 4rem;
+}
+
+#corner,
+#logo {
+  background-color: var(--accent-color);
+  color: black;
+  height: 100%;
+}
+
+#logout {
+  display: none;
+  background: var(--header-footer-background-color);
+  margin: 0;
+}
+
+#logout:hover {
+  background: var(--accent-color);
+}
+
+#corner:hover #logout {
+  display: flex;
+}
+
+#content {
+  background: var(--header-footer-background-color);
+  margin-top: 70px; /* Adjust this margin to account for the fixed header */
+  margin-left: 0%;
+  margin-right: 0%;
+  padding: 20px;
+
+}
+
+button {
+  background-color: var(--button-color);
+  color: black;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+form {
+  background: var(--secondary-text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+
+form input,
+form select {
+  margin: 7px;
+  padding: 3px;
+  width: 50%;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link {
+  background: var(--accent-color);
+  margin: 10px;
+  padding: 5px;
+}
+
+#devices,
+#scoreboard,
+#trails {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#devices ul,
+#trails ul {
+  width: 50%;
+}

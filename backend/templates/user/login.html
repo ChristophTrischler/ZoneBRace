@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="/static/style.css" rel="stylesheet" />
+  <script src="https://unpkg.com/htmx.org@1.9.7"></script>
+</head>
+
+<body>
+  <div class="center">
+    <form hx-post="/login" hx-target="#succsess" hx-swap="innerhtml">
+      <input type="text" name="tag" value="" placeholder="tag" />
+      <input type="password" name="pw" value="" placeholder="password" />
+      <input type="submit" value="login" />
+    </form>
+    <a href="/register">
+      <div class="link">register</div>
+    </a>
+    <div id="succsess"></div>
+  </div>
+</body>
+
+</html>

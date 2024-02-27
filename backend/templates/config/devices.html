@@ -1,0 +1,15 @@
+<div id="devices">
+  <form hx-post="/devices/new" hx-target="#success">
+    <select name="trail_id">
+      {% for t in trails %}
+      <option value="{{t.id}}">{{t.name}}</option>
+      {% endfor %}
+    </select>
+    <input type="submit" name="" value="create new device" />
+  </form>
+  <ul>
+    {% for row in rows %}
+    <li>{{row.id}} on {{row.name}}</li>
+    {% endfor %}
+  </ul>
+</div>

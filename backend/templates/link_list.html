@@ -1,0 +1,3 @@
+{% for l in links %}
+<button hx-get="/{{l}}" hx-push-url="/home/{{l}}">{{l}}</button>
+{% endfor %}

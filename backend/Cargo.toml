@@ -1,0 +1,24 @@
+[package]
+name = "zone-b-race"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-files = "0.6.2"
+actix-web = "4.3.1"
+askama = { version = "0.12.1", features = ["with-actix-web"] }
+askama_actix = "0.14.0"
+chrono = "0.4.31"
+env_logger = "0.10.1"
+fancy-regex = "0.12.0"
+jsonwebtoken = "9.2.0"
+lettre = "0.11.1"
+password-auth = "1.0.0"
+rand_chacha = "0.3.1"
+rand_core = "0.6.4"
+serde = { version = "1.0.192", features = ["derive"] }
+shuttle-actix-web = "0.32.0"
+shuttle-runtime = "0.32.0"
+shuttle-shared-db = { version = "0.32.0", features = ["postgres", "sqlx"] }
+sqlx = { version = "0.7.2", features = ["postgres", "chrono"] }
+tokio = "1.26.0"

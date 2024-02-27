@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th>Rider</th>
+    <th>Trail</th>
+    <th>start</th>
+    <th>finish</th>
+    <th>Time</th>
+  </tr>
+  {% for row in rows %}
+  <tr>
+    <td>{{row.tag}}</td>
+    <td>{{row.name}}</td>
+    <td>{{row.start}}</td>
+    <td>{{row.finish}}</td>
+    <td>{{row.time}}</td>
+  </tr>
+  {% endfor %}
+</table>
