@@ -11,14 +11,15 @@
   <script src="https://unpkg.com/htmx.org@1.9.8"></script>
 </head>
 
-<body hx-headers="js:{jwt: get_jwt()}">
-  <div id="header">
-    <a id="logo" hx-get="/links" hx-target="#content" hx-swap="innerHtml" hx-push-url="/">
+<body hx-headers="js:{jwt: get_jwt()}" class="bg-black-1000 text-white">
+  <nav class="bg-slate-950 rounded-md border-gray-200 px-4 lg:px-6 py-2.5">
+    <a hx-get="/links" hx-target="#content" hx-swap="innerHtml" hx-push-url="/">
       <h3>Zone B Race</h3>
     </a>
-    <div id="corner" hx-get="/user" hx-trigger="load delay:150ms" hx-swap="innerHtml"></div>
-  </div>
-  <div id="content" hx-target="#content" hx-swap="innerHtml" hx-trigger="load delay:150ms" hx-get="/{{ page }}"></div>
+    <div hx-get="/user" hx-trigger="load delay:150ms" hx-swap="innerHtml"></div>
+  </nav>
+  <div class="" id="content" hx-target="#content" hx-swap="innerHtml" hx-trigger="load delay:150ms"
+    hx-get="/{{ page }}"></div>
   <div id="success"></div>
 </body>
 

@@ -51,7 +51,7 @@ async fn register_page() -> impl Responder {
 #[derive(Debug, Deserialize)]
 struct RegisterData {
     tag: String,
-    pw1: String,
+    pw: String,
     pw2: String,
 }
 
@@ -80,11 +80,11 @@ async fn try_register(
     rand: &Random,
     pw_req: &Regex,
 ) -> Result<String, String> {
-    if data.pw1 != data.pw2 {
+    if data.pw != data.pw2 {
         return Err(String::from("passwords dont match"));
     }
     if !pw_req
-        .is_match(&data.pw1)
+        .is_match(&data.pw)
         .map_err(|_| String::from("problem with regex"))?
     {
         return Err(String::from("password didn't match requirements"));
@@ -95,7 +95,7 @@ async fn try_register(
         .map_err(|e| e.to_string())?
         .fill_bytes(&mut token);
     let token = u128::from_le_bytes(token).to_string();
-    let hash = password_auth::generate_hash(&data.pw1);
+    let hash = password_auth::generate_hash(&data.pw);
     let Id(user_id) =
         sqlx::query_as("INSERT INTO UserLogins(tag, hash) VALUES ($1, $2) RETURNING id")
             .bind(&data.tag)

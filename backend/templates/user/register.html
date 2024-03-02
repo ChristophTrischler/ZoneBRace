@@ -10,17 +10,61 @@
 </head>
 
 <body>
-  <div class="center">
-    <form hx-post="/register" hx-target="#succsess" hx-swap="innerhtml">
-      <input type="text" name="tag" placeholder="tag" />
-      <input type="password" name="pw1" value="" placeholder="password" />
-      <input type="password" name="pw2" value="" placeholder="confirm password" />
-      <input type="submit" value="register" />
-    </form>
-    <a href="/login">
-      <div class="link">login</div>
-    </a>
-    <div id="succsess"></div>
+  <div class="self-center text-secondary-50">
+
+    <div class="min-h-screen bg-black-1000 flex flex-col sm:justify-center items-center pt-6 sm:pt-0 ">
+      <div>
+        <a href="/">
+          <h2 class="text-3xl text-red">ZoneBRace</h2>
+        </a>
+      </div>
+
+      <div class="w-full text-black-1000 sm:max-w-md mt-6 px-6 py-2 bg-white shadow-lg 
+                overflow-hidden sm:rounded-lg">
+        <form hx-post=" /register" hx-target="#succsess" hx-swap="innerhtml">
+
+          <div class="py-4">
+            <center>
+              <span class="text-2xl">Register</span>
+            </center>
+          </div>
+
+          <div class="text-slate-950">
+
+            <div class="mt-4">
+              <input type="text" name='tag' placeholder='Tag'
+                class="w-full rounded-md py-2.5 px-4 border border-red text-sm " />
+            </div>
+
+            <div class="mt-4">
+              <input type="password" name="pw" placeholder="Password"
+                class='w-full rounded-md py-2.5 px-4 border border-red text-sm'>
+            </div>
+
+            <div class="mt-4">
+              <input type="password" name="pw2" placeholder="confirm Password"
+                class='w-full rounded-md py-2.5 px-4 border border-red text-sm'>
+            </div>
+
+          </div>
+
+
+          <div class="mt-4">
+            <input type="submit" value="register"
+              class="w-full rounded-md py-2.5 px-4 border border-red text-sm hover:bg-red">
+          </div>
+          <div class="flex items-center mt-4 justify-items-center">
+            <a class="hover:underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              href="/login">
+              have an account already? Login
+            </a>
+          </div>
+        </form>
+      </div>
+      <div id="succsess" class="text-red">
+
+      </div>
+    </div>
   </div>
 </body>
 
