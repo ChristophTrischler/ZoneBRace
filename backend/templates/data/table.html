@@ -1,18 +1,22 @@
-<table>
-  <tr>
-    <th>Rider</th>
-    <th>Trail</th>
-    <th>start</th>
-    <th>finish</th>
-    <th>Time</th>
-  </tr>
-  {% for row in rows %}
-  <tr>
-    <td>{{row.tag}}</td>
-    <td>{{row.name}}</td>
-    <td>{{row.start}}</td>
-    <td>{{row.finish}}</td>
-    <td>{{row.time}}</td>
-  </tr>
-  {% endfor %}
+<table class="w-full border-collapse border border-gray-300">
+  <thead>
+    <tr class="bg-gray-200">
+      <th class="border-y border-gray-100 bg-gray-50/50 p-2">Rider</th>
+      <th class="border-y border-gray-100 bg-gray-50/50 p-2">Trail</th>
+      <th class="border-y border-gray-100 bg-gray-50/50 p-2">start</th>
+      <th class="border-y border-gray-100 bg-gray-50/50 p-2">finish</th>
+      <th class="border-y border-gray-100 bg-gray-50/50 p-2">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+    <tr>
+      <td class="border border-gray-300 px-4 py-2">{{row.tag}}</td>
+      <td class="border border-gray-300 px-4 py-2">{{row.name}}</td>
+      <td class="border border-gray-300 px-4 py-2">{{row.start}}</td>
+      <td class="border border-gray-300 px-4 py-2">{{row.finish}}</td>
+      <td class="border border-gray-300 px-4 py-2">{{row.time}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
 </table>

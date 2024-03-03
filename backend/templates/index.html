@@ -11,16 +11,22 @@
   <script src="https://unpkg.com/htmx.org@1.9.8"></script>
 </head>
 
-<body hx-headers="js:{jwt: get_jwt()}" class="bg-black-1000 text-white">
-  <nav class="bg-slate-950 rounded-md border-gray-200 px-4 lg:px-6 py-2.5">
-    <a hx-get="/links" hx-target="#content" hx-swap="innerHtml" hx-push-url="/">
-      <h3>Zone B Race</h3>
-    </a>
-    <div hx-get="/user" hx-trigger="load delay:150ms" hx-swap="innerHtml"></div>
+<body hx-headers="js:{jwt: get_jwt()}" class="bg-gray">
+  <nav class="bg-secondary rounded-xl m-2 px-4 py-2 flex flex-row justify-between">
+    <div class="p-2 bg-primary border rounded-xl border-primary">
+      <a hx-get="/links" hx-target="#content" hx-swap="innerHtml" hx-push-url="/">
+        <h2 class="text-2xl">ZoneBRace</h2>
+      </a>
+    </div>
+    <div hx-get="/user" hx-trigger="load delay:150ms" hx-swap="innerHtml"
+      class="p-2 bg-khaki border rounded-xl border-khaki group"></div>
   </nav>
-  <div class="" id="content" hx-target="#content" hx-swap="innerHtml" hx-trigger="load delay:150ms"
+
+
+  <div class="mt-7 flex justify-center w-full" id="content" hx-target="#content" hx-swap="innerHtml" hx-trigger="load delay:150ms"
     hx-get="/{{ page }}"></div>
   <div id="success"></div>
-</body>
 
+
+</body>
 </html>

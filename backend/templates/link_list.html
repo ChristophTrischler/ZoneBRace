@@ -1,3 +1,4 @@
 {% for l in links %}
-<button hx-get="/{{l}}" hx-push-url="/home/{{l}}">{{l}}</button>
+<button class="p-2.5 m-2.5 boder border-black rounded-md bg-khaki shadow-khaki shadow-sm" hx-get="/{{l}}"
+  hx-push-url="/home/{{l}}">{{l}}</button>
 {% endfor %}

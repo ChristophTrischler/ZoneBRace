@@ -1,19 +1,26 @@
-<div id="scoreboard">
-  <form hx-get="/scoreboard/table" hx-target="#table" hx-trigger="load, every 10s, change" hx-swap="innerhtml">
-    <label for="rider">rider filter: </label>
-    <select name="rider">
+<div id="scoreboard" class="text-white w-4/5 ">
+  <form hx-get="/scoreboard/table" hx-target="#table" hx-trigger="load, every 10s, change" hx-swap="innerhtml"
+    class="mr-16 w-full">
+    <label for="rider" class="mr-2">rider filter: </label>
+    <select name="rider" 
+      class="lign-middle select-none font-sans font-bold text-center uppercase transition-all text-xs py-2 px-4
+      rounded-lg bg-black shadow-md shadow-black hover:shadow-lg 
+      focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">
       <option value=""></option>
       {% for tag in rider %}
       <option value="{{tag}}">{{tag}}</option>
       {% endfor %}
     </select>
-    <label for="trail">trail filter: </label>
-    <select name="trail">
+    <label for="trail" class="mr-2">trail filter: </label>
+    <select name="trail"
+      class="lign-middle select-none font-sans font-bold text-center uppercase transition-all text-xs py-2 px-4
+      rounded-lg bg-black shadow-md shadow-black hover:shadow-lg 
+      focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">
       <option value=""></option>
       {% for name in trails %}
       <option value="{{name}}">{{name}}</option>
       {% endfor %}
     </select>
   </form>
-  <div id="table"></div>
+  <div id="table" class="overflow-x-auto mt-7 w-full"></div>
 </div>

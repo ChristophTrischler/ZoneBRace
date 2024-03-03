@@ -1,8 +1,5 @@
-<div id="user">
-  <h3>{{tag}}</h3>
-</div>
-<div id="logout">
-  <a hx-post="/logout">
-    <h3>logout</h3>
-  </a>
-</div>
+<h2 class="text-2xl group-hover:hidden">{{tag}}</h2>
+
+<a class="hidden group-hover:block" hx-post="/logout">
+  <h2 class="text-2xl">logout</h2>
+</a>
